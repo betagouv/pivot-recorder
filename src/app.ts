@@ -4,6 +4,7 @@ import cors from "cors"
 import morgan from "morgan"
 
 import { config } from "./config"
+import { checkSignature } from "./middlewares/checkSignature"
 import { healthCheckRoutes } from "./controllers/healthCheck"
 import { userRoutes } from "./controllers/users"
 
@@ -16,7 +17,7 @@ app.use(morgan(config.morganFormat))
 
 // Routes
 app.use("/", healthCheckRoutes)
-app.use("/users", userRoutes)
+app.use("/users", checkSignature, userRoutes)
 
 app.listen(config.port, () => {
   console.log(`Server running on port ${config.port}`)
