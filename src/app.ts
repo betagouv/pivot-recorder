@@ -6,7 +6,7 @@ import { healthCheckRoutes } from "./controllers/healthCheck"
 import { userRoutes } from "./controllers/users"
 
 const app: Application = express()
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
