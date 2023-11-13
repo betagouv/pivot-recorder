@@ -17,3 +17,16 @@ Gestion des Utilisateurs : Endpoint POST /users pour créer de nouveaux utilisat
 6. Lancer le serveur avec `npm run dev`
 
 Le serveur s'exécute sur le port 4000.
+
+## Migrations
+
+### En developpement
+
+1. Modifier le schéma de la base de données dans le fichier `prisma/schema.prisma`
+2. Générer les migrations avec `npx prisma migrate dev --name NOM_DE_LA_MIGRATION`
+3. Vérifier les warnings dans le fichier de migration, principalement concernant les pertes de données.
+4. Commit les fichiers générés dans le dossier `prisma/migrations`
+
+### En production
+
+Scalingo exécute automatiquement les migrations à chaque déploiement via l'entrée `postdeploy` dans le Procfile.
