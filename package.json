@@ -1,9 +1,14 @@
 {
   "name": "pivot-recorder",
   "version": "1.0.0",
+  "engine": {
+    "node": "20",
+    "npm": "10"
+  },
   "description": "",
   "main": "src/app.js",
   "scripts": {
+    "start": "ts-node ./src/app.ts",
     "dev": "ts-node-dev --respawn --transpile-only ./src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write . && eslint --ext .ts,.tsx,.js --fix .",
@@ -15,7 +20,8 @@
     "@prisma/client": "^5.5.2",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.16",
