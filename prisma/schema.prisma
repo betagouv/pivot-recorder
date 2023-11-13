@@ -18,10 +18,12 @@ model User {
   gender String
   birthplace_insee_code String
   birthcountry_insee_code String
-  email String
+  email String?
   token String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  phone String?
+  status String @default("new")
 
   @@map("users")
 }

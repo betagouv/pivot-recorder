@@ -16,6 +16,7 @@ router.post("/", async (req: Request, res: Response) => {
       birthplace_insee_code,
       birthcountry_insee_code,
       email,
+      phone,
     } = req.body
 
     const token = generateToken()
@@ -29,6 +30,7 @@ router.post("/", async (req: Request, res: Response) => {
         birthplace_insee_code,
         birthcountry_insee_code,
         email,
+        phone,
         token,
       },
     })
