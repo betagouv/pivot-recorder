@@ -26,4 +26,5 @@ module.exports = {
   },
   plugins: ["@typescript-eslint"],
   rules: {},
+  ignorePatterns: ["node_modules", "build"],
 }
