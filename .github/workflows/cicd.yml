@@ -24,3 +24,6 @@ jobs:
 
       - name: Run Linters
         run: npm run lint
+
+      - name: Check TypeScript types
+        run: npx tsc --noEmit
